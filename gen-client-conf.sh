@@ -15,10 +15,10 @@ check_depends
 
 K=$(which kubectl)
 OPENSSL=$(which openssl)
-YQ=$(which yq)
+
 KUBECONFIG=${KUBECONFIG:-"$HOME/.kube/config"}
 
-KUBE_API="$(cat $KUBECONFIG| $YQ '.clusters[0].cluster.server')"
+KUBE_API="$(cat $KUBECONFIG| yq '.clusters[0].cluster.server')"
 KUBE_CRT="$(cat $KUBECONFIG | yq '.clusters[0].cluster.certificate-authority-data')"
 
 KUBE_USER=${NAME:-"myclient"}

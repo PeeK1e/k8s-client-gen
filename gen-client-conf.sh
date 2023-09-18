@@ -47,7 +47,7 @@ CLIENT_CERT_BASE64=$(base64 -w 0 < "$(pwd)/keys/my-signed-user.crt")
 CLIENT_KEY_BASE64=$(base64 -w 0 < "$(pwd)/keys/my-user.key")
 CA_CERT_BASE64=$KUBE_CRT
 
-cat <<EOF > "$(pwd)/keys/my-user-kubeconfig.yaml"
+cat <<EOF > "$(pwd)/kubeconfig.yaml"
 apiVersion: v1
 kind: Config
 current-context: my-cluster

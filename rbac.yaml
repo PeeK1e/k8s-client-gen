@@ -8,6 +8,7 @@ rules:
 - apiGroups: ["*"]
   resources: ["*"]
   verbs: ["get", "list", "watch"]
+# enable `kubectl exec`
 # - apiGroups: [""]
 #   resources: ["pods/exec"]
 #   verbs: ["get", "create"]

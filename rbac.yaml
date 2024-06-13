@@ -8,6 +8,10 @@ rules:
 - apiGroups: ["*"]
   resources: ["*"]
   verbs: ["get", "list", "watch"]
+# enable `kubectl logs`
+- apiGroups: [""]
+  resources: ["pods/logs"]
+  verbs: ["get", "create"]
 # enable `kubectl exec`
 # - apiGroups: [""]
 #   resources: ["pods/exec"]
@@ -24,4 +28,4 @@ roleRef:
 subjects:
 - apiGroup: rbac.authorization.k8s.io
   kind: User
-  name: "myclient"
+  name: "emmi"
